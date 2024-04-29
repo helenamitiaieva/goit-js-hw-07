@@ -19,12 +19,16 @@ function createBoxes(amount) {
     box.style.height = `${newSize}px`;
     box.style.backgroundColor = getRandomHexColor();
     boxes.appendChild(box);
+
   }
+  boxes.innerHTML = ""; 
+  boxes.appendChild(box); 
 }
 
 function destroyBoxes() {
   boxes.innerHTML = "";
 }
+
 
 buttonCreate.addEventListener("click", createAction);
 function createAction() {
