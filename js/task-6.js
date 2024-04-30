@@ -4,6 +4,9 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
+const boxArray = [];
+
+
 const input = document.querySelector("input");
 const buttonCreate = document.querySelector("[data-create]");
 const buttonDestroy = document.querySelector("[data-destroy]");
@@ -18,11 +21,9 @@ function createBoxes(amount) {
     box.style.width = `${newSize}px`;
     box.style.height = `${newSize}px`;
     box.style.backgroundColor = getRandomHexColor();
-    boxes.appendChild(box);
-
+    boxArray.push(box);
   }
-  boxes.innerHTML = ""; 
-  boxes.appendChild(box); 
+  boxes.append(...boxArray); 
 }
 
 function destroyBoxes() {
