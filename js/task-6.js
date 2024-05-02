@@ -4,9 +4,6 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-const boxArray = [];
-
-
 const input = document.querySelector("input");
 const buttonCreate = document.querySelector("[data-create]");
 const buttonDestroy = document.querySelector("[data-destroy]");
@@ -15,6 +12,7 @@ const boxes = document.querySelector("#boxes");
 function createBoxes(amount) {
   const baseSize = 30;
   boxes.innerHTML = "";
+  const boxArray = [];
   for (let i = 0; i < amount; i++) {
     const newSize = baseSize + i * 10;
     const box = document.createElement("div");
